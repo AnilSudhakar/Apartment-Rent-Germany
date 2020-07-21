@@ -1,0 +1,814 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germany</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/stylesheet/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet/style.css') }}">-->
+
+</head>
+
+<body>
+	<!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h2>Let's find you a roooof!</h2>
+            </div>
+        </div>
+    </nav>
+    <section>
+    	<div class="box">
+
+		    <div class="container">
+
+
+
+		        <form action="\predict" method="post">
+
+
+		            <div class="row">
+		                <div class="col-sm-6">
+		                    <div class="card">
+		                        <div class="card-body">
+		                            <h5 class="card-title">Federal State</h5>
+			
+										<select name="federal_state" id= "federal_state" data-target="secondList" class="firstList selectFilter" required="required">
+											<option value="-1">Select</option>
+											<option data-ref="Bayern">Bayern</option>
+											<option data-ref="Sachsen">Sachsen</option>
+											<option data-ref="Sachsen Anhalt">Sachsen Anhalt</option>
+											<option data-ref="Niedersachsen">Niedersachsen</option>
+											<option data-ref="Nordrhein Westfalen">Nordrhein Westfalen</option>
+											<option data-ref="Berlin">Berlin</option>
+											<option data-ref="Thüringen">Thüringen</option>
+											<option data-ref="Hessen">Hessen</option>
+											<option data-ref="Rheinland Pfalz">Rheinland Pfalz</option>
+											<option data-ref="Hamburg">Hamburg</option>
+											<option data-ref="Schleswig Holstein">Schleswig Holstein</option>
+											<option data-ref="Brandenburg">Brandenburg</option>
+											<option data-ref="Mecklenburg Vorpommern">Mecklenburg Vorpommern</option>
+											<option data-ref="Baden Württemberg">Baden Württemberg</option>
+											<option data-ref="Saarland">Saarland</option>
+											<option data-ref="Bremen">Bremen</option>
+​
+										</select>
+								</div>
+		                    </div>
+		                </div>
+		                
+		                <div class="col-sm-6">
+		                    <div class="card">
+		                        <div class="card-body">
+		                            <h5 class="card-title">Living Area</h5>
+		                            <!-- Arrival -->
+		                            <input type="number" name="Living_Area" id="Living_Area" min= "10" max="100" required="required">
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <br>
+		            <div class="row">
+		                <div class="col-sm-6">
+		                    <div class="card">
+		                        <div class="card-body">
+		                            <!-- Source -->
+		                            <h5 class="card-title">Region</h5>
+		                
+										<select name="region" id="region" data-target="thirdList" class="secondList selectFilter" required="required">
+											<option value="-1">Select</option>
+											<option data-ref="Mannheim" data-belong="Baden Württemberg" >Mannheim</option>
+											<option data-ref="Lörrach Kreis" data-belong="Baden Württemberg" >Lörrach Kreis</option>
+											<option data-ref="Böblingen Kreis" data-belong="Baden Württemberg" >Böblingen Kreis</option>
+											<option data-ref="Stuttgart" data-belong="Baden Württemberg" >Stuttgart</option>
+											<option data-ref="Heilbronn" data-belong="Baden Württemberg" >Heilbronn</option>
+											<option data-ref="Rhein Neckar Kreis" data-belong="Baden Württemberg" >Rhein Neckar Kreis</option>
+											<option data-ref="Esslingen Kreis" data-belong="Baden Württemberg" >Esslingen Kreis</option>
+											<option data-ref="Ludwigsburg Kreis" data-belong="Baden Württemberg" >Ludwigsburg Kreis</option>
+											<option data-ref="Heidelberg" data-belong="Baden Württemberg" >Heidelberg</option>
+											<option data-ref="Karlsruhe Kreis" data-belong="Baden Württemberg" >Karlsruhe Kreis</option>
+											<option data-ref="Heilbronn Kreis" data-belong="Baden Württemberg" >Heilbronn Kreis</option>
+											<option data-ref="Karlsruhe" data-belong="Baden Württemberg" >Karlsruhe</option>
+											<option data-ref="München" data-belong="Bayern" >München</option>
+											<option data-ref="Nürnberg" data-belong="Bayern" >Nürnberg</option>
+											<option data-ref="Ingolstadt" data-belong="Bayern" >Ingolstadt</option>
+											<option data-ref="Aschaffenburg" data-belong="Bayern" >Aschaffenburg</option>
+											<option data-ref="Passau" data-belong="Bayern" >Passau</option>
+											<option data-ref="München Kreis" data-belong="Bayern" >München Kreis</option>
+											<option data-ref="Regensburg" data-belong="Bayern" >Regensburg</option>
+											<option data-ref="Rosenheim Kreis" data-belong="Bayern" >Rosenheim Kreis</option>
+											<option data-ref="Augsburg" data-belong="Bayern" >Augsburg</option>
+											<option data-ref="Fürth" data-belong="Bayern" >Fürth</option>
+											<option data-ref="Würzburg" data-belong="Bayern" >Würzburg</option>
+											<option data-ref="berlin" data-belong="Berlin" >Berlin</option>
+											<option data-ref="Cottbus" data-belong="Brandenburg" >Cottbus</option>
+											<option data-ref="Barnim Kreis" data-belong="Brandenburg" >Barnim Kreis</option>
+											<option data-ref="Uckermark Kreis" data-belong="Brandenburg" >Uckermark Kreis</option>
+											<option data-ref="Oberspreewald Lausitz Kreis" data-belong="Brandenburg" >Oberspreewald Lausitz Kreis</option>
+											<option data-ref="Brandenburg an der Havel" data-belong="Brandenburg" >Brandenburg an der Havel</option>
+											<option data-ref="Dahme Spreewald Kreis" data-belong="Brandenburg" >Dahme Spreewald Kreis</option>
+											<option data-ref="Potsdam Mittelmark Kreis" data-belong="Brandenburg" >Potsdam Mittelmark Kreis</option>
+											<option data-ref="Potsdam" data-belong="Brandenburg" >Potsdam</option>
+											<option data-ref="Bremerhaven" data-belong="Bremen" >Bremerhaven</option>
+											<option data-ref="Bremen" data-belong="Bremen" >Bremen</option>
+											<option data-ref="hamburg" data-belong="Hamburg" >Hamburg</option>
+											<option data-ref="Frankfurt am Main" data-belong="Hessen" >Frankfurt am Main</option>
+											<option data-ref="Wiesbaden" data-belong="Hessen" >Wiesbaden</option>
+											<option data-ref="Hochtaunuskreis" data-belong="Hessen" >Hochtaunuskreis</option>
+											<option data-ref="Main Kinzig Kreis" data-belong="Hessen" >Main Kinzig Kreis</option>
+											<option data-ref="Offenbach Kreis" data-belong="Hessen" >Offenbach Kreis</option>
+											<option data-ref="Gießen Kreis" data-belong="Hessen" >Gießen Kreis</option>
+											<option data-ref="Offenbach am Main" data-belong="Hessen" >Offenbach am Main</option>
+											<option data-ref="Main Taunus Kreis" data-belong="Hessen" >Main Taunus Kreis</option>
+											<option data-ref="Marburg Biedenkopf Kreis" data-belong="Hessen" >Marburg Biedenkopf Kreis</option>
+											<option data-ref="Wetteraukreis" data-belong="Hessen" >Wetteraukreis</option>
+											<option data-ref="Groß Gerau Kreis" data-belong="Hessen" >Groß Gerau Kreis</option>
+											<option data-ref="Darmstadt" data-belong="Hessen" >Darmstadt</option>
+											<option data-ref="Bergstraße Kreis" data-belong="Hessen" >Bergstraße Kreis</option>
+											<option data-ref="Rheingau Taunus Kreis" data-belong="Hessen" >Rheingau Taunus Kreis</option>
+											<option data-ref="Kassel" data-belong="Hessen" >Kassel</option>
+											<option data-ref="Darmstadt Dieburg Kreis" data-belong="Hessen" >Darmstadt Dieburg Kreis</option>
+											<option data-ref="Neubrandenburg" data-belong="Mecklenburg Vorpommern" >Neubrandenburg</option>
+											<option data-ref="Rostock" data-belong="Mecklenburg Vorpommern" >Rostock</option>
+											<option data-ref="Schwerin" data-belong="Mecklenburg Vorpommern" >Schwerin</option>
+											<option data-ref="Mecklenburg Strelitz Kreis" data-belong="Mecklenburg Vorpommern" >Mecklenburg Strelitz Kreis</option>
+											<option data-ref="Ludwigslust Kreis" data-belong="Mecklenburg Vorpommern" >Ludwigslust Kreis</option>
+											<option data-ref="Nordvorpommern Kreis" data-belong="Mecklenburg Vorpommern" >Nordvorpommern Kreis</option>
+											<option data-ref="Nordwestmecklenburg Kreis" data-belong="Mecklenburg Vorpommern" >Nordwestmecklenburg Kreis</option>
+											<option data-ref="Greifswald" data-belong="Mecklenburg Vorpommern" >Greifswald</option>
+											<option data-ref="Goslar Kreis" data-belong="Niedersachsen" >Goslar Kreis</option>
+											<option data-ref="Göttingen Kreis" data-belong="Niedersachsen" >Göttingen Kreis</option>
+											<option data-ref="Hildesheim Kreis" data-belong="Niedersachsen" >Hildesheim Kreis</option>
+											<option data-ref="Salzgitter" data-belong="Niedersachsen" >Salzgitter</option>
+											<option data-ref="Hannover" data-belong="Niedersachsen" >Hannover</option>
+											<option data-ref="Celle Kreis" data-belong="Niedersachsen" >Celle Kreis</option>
+											<option data-ref="Braunschweig" data-belong="Niedersachsen" >Braunschweig</option>
+											<option data-ref="Hannover Kreis" data-belong="Niedersachsen" >Hannover Kreis</option>
+											<option data-ref="Lüneburg Kreis" data-belong="Niedersachsen" >Lüneburg Kreis</option>
+											<option data-ref="Northeim Kreis" data-belong="Niedersachsen" >Northeim Kreis</option>
+											<option data-ref="Stade Kreis" data-belong="Niedersachsen" >Stade Kreis</option>
+											<option data-ref="Wilhelmshaven" data-belong="Niedersachsen" >Wilhelmshaven</option>
+											<option data-ref="Harburg Kreis" data-belong="Niedersachsen" >Harburg Kreis</option>
+											<option data-ref="Helmstedt Kreis" data-belong="Niedersachsen" >Helmstedt Kreis</option>
+											<option data-ref="Osnabrück" data-belong="Niedersachsen" >Osnabrück</option>
+											<option data-ref="Oldenburg Oldenburg" data-belong="Niedersachsen" >Oldenburg Oldenburg</option>
+											​<option data-ref="Recklinghausen Kreis" data-belong="Nordrhein Westfalen" >Recklinghausen Kreis</option>
+											<option data-ref="Wuppertal" data-belong="Nordrhein Westfalen" >Wuppertal</option>
+											<option data-ref="Gelsenkirchen" data-belong="Nordrhein Westfalen" >Gelsenkirchen</option>
+											<option data-ref="Duisburg" data-belong="Nordrhein Westfalen" >Duisburg</option>
+											<option data-ref="Essen" data-belong="Nordrhein Westfalen" >Essen</option>
+											<option data-ref="Düsseldorf" data-belong="Nordrhein Westfalen" >Düsseldorf</option>
+											<option data-ref="Ennepe Ruhr Kreis" data-belong="Nordrhein Westfalen" >Ennepe Ruhr Kreis</option>
+											<option data-ref="Mettmann Kreis" data-belong="Nordrhein Westfalen" >Mettmann Kreis</option>
+											<option data-ref="Märkischer Kreis" data-belong="Nordrhein Westfalen" >Märkischer Kreis</option>
+											<option data-ref="Hagen" data-belong="Nordrhein Westfalen" >Hagen</option>
+											<option data-ref="Bochum" data-belong="Nordrhein Westfalen" >Bochum</option>
+											<option data-ref="Krefeld" data-belong="Nordrhein Westfalen" >Krefeld</option>
+											<option data-ref="Köln" data-belong="Nordrhein Westfalen" >Köln</option>
+											<option data-ref="Bonn" data-belong="Nordrhein Westfalen" >Bonn</option>
+											<option data-ref="Aachen" data-belong="Nordrhein Westfalen" >Aachen</option>
+											<option data-ref="Dortmund" data-belong="Nordrhein Westfalen" >Dortmund</option>
+											<option data-ref="Mönchengladbach" data-belong="Nordrhein Westfalen" >Mönchengladbach</option>
+											<option data-ref="Bad Kreuznach Kreis" data-belong="Rheinland Pfalz" >Bad Kreuznach Kreis</option>
+											<option data-ref="Trier" data-belong="Rheinland Pfalz" >Trier</option>
+											<option data-ref="Westerwaldkreis" data-belong="Rheinland Pfalz" >Westerwaldkreis</option>
+											<option data-ref="Mayen Koblenz Kreis" data-belong="Rheinland Pfalz" >Mayen Koblenz Kreis</option>
+											<option data-ref="Mainz" data-belong="Rheinland Pfalz" >Mainz</option>
+											<option data-ref="Mainz Bingen Kreis" data-belong="Rheinland Pfalz" >Mainz Bingen Kreis</option>
+											<option data-ref="Koblenz" data-belong="Rheinland Pfalz" >Koblenz</option>
+											<option data-ref="Stadtverband Saarbrücken Kreis" data-belong="Saarland" >Stadtverband Saarbrücken Kreis</option>
+											<option data-ref="Saarpfalz Kreis" data-belong="Saarland" >Saarpfalz Kreis</option>
+											<option data-ref="Saarlouis Kreis" data-belong="Saarland" >Saarlouis Kreis</option>
+											<option data-ref="Neunkirchen Kreis" data-belong="Saarland" >Neunkirchen Kreis</option>
+											<option data-ref="Leipzig" data-belong="Sachsen" >Leipzig</option>
+											<option data-ref="Dresden" data-belong="Sachsen" >Dresden</option>
+											<option data-ref="Chemnitz" data-belong="Sachsen" >Chemnitz</option>
+											<option data-ref="Zwickau Kreis" data-belong="Sachsen" >Zwickau Kreis</option>
+											<option data-ref="Meißen Kreis" data-belong="Sachsen" >Meißen Kreis</option>
+											<option data-ref="Zwickau" data-belong="Sachsen" >Zwickau</option>
+											<option data-ref="Leipzig Kreis" data-belong="Sachsen" >Leipzig Kreis</option>
+											<option data-ref="Plauen" data-belong="Sachsen" >Plauen</option>
+											<option data-ref="Sächsische Schweiz Osterzgebirge Kreis" data-belong="Sachsen" >Sächsische Schweiz Osterzgebirge Kreis</option>
+											<option data-ref="Mittelsachsen Kreis" data-belong="Sachsen" >Mittelsachsen Kreis</option>
+											<option data-ref="Bautzen Kreis" data-belong="Sachsen" >Bautzen Kreis</option>
+											<option data-ref="Erzgebirgskreis" data-belong="Sachsen" >Erzgebirgskreis</option>
+											<option data-ref="Nordsachsen Kreis" data-belong="Sachsen" >Nordsachsen Kreis</option>
+											<option data-ref="Görlitz Kreis" data-belong="Sachsen" >Görlitz Kreis</option>
+											<option data-ref="Magdeburg" data-belong="Sachsen Anhalt" >Magdeburg</option>
+											<option data-ref="Halle Saale" data-belong="Sachsen Anhalt" >Halle Saale</option>
+											<option data-ref="Saalekreis" data-belong="Sachsen Anhalt" >Saalekreis</option>
+											<option data-ref="Burgenlandkreis" data-belong="Sachsen Anhalt" >Burgenlandkreis</option>
+											<option data-ref="Harz Kreis" data-belong="Sachsen Anhalt" >Harz Kreis</option>
+											<option data-ref="Dessau Roßlau" data-belong="Sachsen Anhalt" >Dessau Roßlau</option>
+											<option data-ref="Anhalt Bitterfeld Kreis" data-belong="Sachsen Anhalt" >Anhalt Bitterfeld Kreis</option>
+											<option data-ref="Mansfeld Südharz Kreis" data-belong="Sachsen Anhalt" >Mansfeld Südharz Kreis</option>
+											<option data-ref="Stendal Kreis" data-belong="Sachsen Anhalt" >Stendal Kreis</option>
+											<option data-ref="Salzlandkreis" data-belong="Sachsen Anhalt" >Salzlandkreis</option>
+											<option data-ref="Börde Kreis" data-belong="Sachsen Anhalt" >Börde Kreis</option>
+											<option data-ref="Pinneberg Kreis" data-belong="Schleswig Holstein" >Pinneberg Kreis</option>
+											<option data-ref="Segeberg Kreis" data-belong="Schleswig Holstein" >Segeberg Kreis</option>
+											<option data-ref="Kiel" data-belong="Schleswig Holstein" >Kiel</option>
+											<option data-ref="Herzogtum Lauenburg Kreis" data-belong="Schleswig Holstein" >Herzogtum Lauenburg Kreis</option>
+											<option data-ref="Rendsburg Eckernförde Kreis" data-belong="Schleswig Holstein" >Rendsburg Eckernförde Kreis</option>
+											<option data-ref="Schleswig Flensburg Kreis" data-belong="Schleswig Holstein" >Schleswig Flensburg Kreis</option>
+											<option data-ref="Stormarn Kreis" data-belong="Schleswig Holstein" >Stormarn Kreis</option>
+											<option data-ref="Flensburg" data-belong="Schleswig Holstein" >Flensburg</option>
+											<option data-ref="Gera" data-belong="Thüringen" >Gera</option>
+											<option data-ref="Altenburger" data-belong="Thüringen" >Altenburger</option>
+											<option data-ref="Land Kreis" data-belong="Thüringen" >Land Kreis</option>
+											<option data-ref="Eisenach" data-belong="Thüringen" >Eisenach</option>
+											<option data-ref="Unstrut Hainich Kreis" data-belong="Thüringen" >Unstrut Hainich Kreis</option>
+											<option data-ref="Gotha Kreis" data-belong="Thüringen" >Gotha Kreis</option>
+											<option data-ref="Greiz Kreis" data-belong="Thüringen" >Greiz Kreis</option>
+											<option data-ref="Nordhausen Kreis" data-belong="Thüringen" >Nordhausen Kreis</option>
+											<option data-ref="Erfurt" data-belong="Thüringen" >Erfurt</option>	​
+										</select>
+								</div>
+		                    </div>
+		                </div>
+						
+						<div class="col-sm-6">
+		                    <div class="card">
+		                        <div class="card-body">
+		                            <h5 class="card-title">Number of Rooms</h5>
+		                            <!-- Destination -->
+		                            <label for="Rooms"></label>
+		                                <input type="number" name="Rooms" id="Rooms" min="1" max="5" required="required">
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <br>
+		            
+		            <div class="row">
+		                <div class="col-sm-6">
+		                    <div class="card">
+		                        <div class="card-body">
+		                            <!-- Source -->
+		                            <h5 class="card-title">City</h5>
+		           
+							            <select name="city" id="city" class="thirdList selectFilter" required="required">
+											<option value="-1">Select</option>
+											<option data-belong="Aachen" >Adalbertsteinweg</option>
+											<option data-belong="Aachen" >Frankenberg</option>
+											<option data-belong="Aachen" >Ponttor</option>
+											<option data-belong="Aachen" >Hangeweiher</option>
+											<option data-belong="Altenburger Land Kreis" >Altenburg</option>
+											<option data-belong="Altenburger Land Kreis" >Meuselwitz</option>
+											<option data-belong="Anhalt Bitterfeld Kreis" >Bitterfeld Wolfen</option>
+											<option data-belong="Anhalt Bitterfeld Kreis" >Köthen Anhalt</option>
+											<option data-belong="Aschaffenburg" >Stadtmitte</option>
+											<option data-belong="Aschaffenburg" >Damm</option>
+											<option data-belong="Augsburg" >Lechhausen</option>
+											<option data-belong="Bad Kreuznach Kreis" >Bad Kreuznach</option>
+											<option data-belong="Bad Kreuznach Kreis" >Bad Münster am Stein Ebernburg</option>
+											<option data-belong="Barnim Kreis" >Eberswalde</option>
+											<option data-belong="Barnim Kreis" >Bernau bei Berlin</option>
+											<option data-belong="Bautzen Kreis" >Bautzen</option>
+											<option data-belong="Bautzen Kreis" >Kamenz</option>
+											<option data-belong="Bautzen Kreis" >Radeberg</option>
+											<option data-belong="Bergstraße Kreis" >Bensheim</option>
+											<option data-belong="Bergstraße Kreis" >Heppenheim Bergstraße</option>
+											<option data-belong="Bergstraße Kreis" >Viernheim</option>
+											<option data-belong="berlin" >Mitte Mitte</option>
+											<option data-belong="berlin" >Tiergarten Tiergarten</option>
+											<option data-belong="berlin" >Charlottenburg Charlottenburg</option>
+											<option data-belong="berlin" >Friedrichshain Friedrichshain</option>
+											<option data-belong="berlin" >Prenzlauer Berg Prenzlauer Berg</option>
+											<option data-belong="berlin" >Spandau Spandau</option>
+											<option data-belong="berlin" >Wedding Wedding</option>
+											<option data-belong="berlin" >Neukölln Neukölln</option>
+											<option data-belong="berlin" >Wilmersdorf Wilmersdorf</option>
+											<option data-belong="berlin" >Köpenick Köpenick</option>
+											<option data-belong="berlin" >Kreuzberg Kreuzberg</option>
+											<option data-belong="berlin" >Hellersdorf Hellersdorf</option>
+											<option data-belong="berlin" >Schöneberg Schöneberg</option>
+											<option data-belong="berlin" >Reinickendorf Reinickendorf</option>
+											<option data-belong="berlin" >Lichterfelde Steglitz</option>
+											<option data-belong="berlin" >Weißensee Weißensee</option>
+											<option data-belong="berlin" >Pankow Pankow</option>
+											<option data-belong="berlin" >Steglitz Steglitz</option>
+											<option data-belong="berlin" >Friedrichsfelde Lichtenberg</option>
+											<option data-belong="berlin" >Marzahn Marzahn</option>
+											<option data-belong="berlin" >Oberschöneweide Köpenick</option>
+											<option data-belong="berlin" >Lichtenberg Lichtenberg</option>
+											<option data-belong="berlin" >Adlershof Treptow</option>
+											<option data-belong="berlin" >Alt Hohenschönhausen Hohenschönhausen</option>
+											<option data-belong="berlin" >Staaken Spandau</option>
+											<option data-belong="berlin" >Biesdorf Marzahn</option>
+											<option data-belong="Bochum" >Wattenscheid Mitte</option>
+											<option data-belong="Bochum" >Hamme</option>
+											<option data-belong="Bochum" >Gleisdreieck</option>
+											<option data-belong="Bochum" >Kruppwerke</option>
+											<option data-belong="Bochum" >Weitmar Mitte</option>
+											<option data-belong="Bochum" >Südinnenstadt</option>
+											<option data-belong="Bonn" >Bad Godesberg</option>
+											<option data-belong="Bonn" >Beuel</option>
+											<option data-belong="Bonn" >Poppelsdorf</option>
+											<option data-belong="Brandenburg an der Havel" >Hohenstücken</option>
+											<option data-belong="Braunschweig" >Westliches Ringgebiet</option>
+											<option data-belong="Braunschweig" >Östliches Ringgebiet</option>
+											<option data-belong="Bremen" >Handelshäfen</option>
+											<option data-belong="Bremen" >Bahnhofsvorstadt</option>
+											<option data-belong="Bremerhaven" >Geestemünde</option>
+											<option data-belong="Burgenlandkreis" >Zeitz</option>
+											<option data-belong="Burgenlandkreis" >Naumburg Saale</option>
+											<option data-belong="Burgenlandkreis" >Weißenfels</option>
+											<option data-belong="Böblingen Kreis" >Böblingen</option>
+											<option data-belong="Böblingen Kreis" >Leonberg</option>
+											<option data-belong="Böblingen Kreis" >Sindelfingen</option>
+											<option data-belong="Börde Kreis" >Oschersleben Bode</option>
+											<option data-belong="Börde Kreis" >Wolmirstedt</option>
+											<option data-belong="Celle Kreis" >Celle</option>
+											<option data-belong="Celle Kreis" >Bergen</option>
+											<option data-belong="Chemnitz" >Kaßberg</option>
+											<option data-belong="Chemnitz" >Schloßchemnitz</option>
+											<option data-belong="Chemnitz" >Lutherviertel</option>
+											<option data-belong="Cottbus" >Stadtmitte</option>
+											<option data-belong="Cottbus" >Schmellwitz</option>
+											<option data-belong="Cottbus" >Sachsendorf</option>
+											<option data-belong="Cottbus" >Spremberger Vorstadt</option>
+											<option data-belong="Cottbus" >Sandow</option>
+											<option data-belong="Dahme Spreewald Kreis" >Wildau</option>
+											<option data-belong="Dahme Spreewald Kreis" >Schönefeld</option>
+											<option data-belong="Darmstadt" >Darmstadt Mitte</option>
+											<option data-belong="Darmstadt" >Darmstadt Nord</option>
+											<option data-belong="Darmstadt" >Bessungen</option>
+											<option data-belong="Darmstadt Dieburg Kreis" >Dieburg</option>
+											<option data-belong="Dessau Roßlau" >Innerstädtischer Bereich Nord</option>
+											<option data-belong="Dessau Roßlau" >Innerstädtischer Bereich Süd</option>
+											<option data-belong="Dessau Roßlau" >Innerstädtischer Bereich Mitte</option>
+											<option data-belong="Dessau Roßlau" >Roßlau</option>
+											<option data-belong="Dortmund" >Hörde</option>
+											<option data-belong="Dortmund" >Nette</option>
+											<option data-belong="Dortmund" >Huckarde</option>
+											<option data-belong="Dresden" >Innere Altstadt</option>
+											<option data-belong="Dresden" >Äußere Neustadt Antonstadt</option>
+											<option data-belong="Dresden" >Johannstadt Nord</option>
+											<option data-belong="Dresden" >Striesen Süd</option>
+											<option data-belong="Dresden" >Friedrichstadt</option>
+											<option data-belong="Dresden" >Wilsdruffer Vorstadt/Seevorstadt West</option>
+											<option data-belong="Dresden" >Löbtau Süd</option>
+											<option data-belong="Dresden" >Löbtau Nord</option>
+											<option data-belong="Dresden" >Südvorstadt West</option>
+											<option data-belong="Dresden" >Cotta</option>
+											<option data-belong="Dresden" >Leipziger Vorstadt</option>
+											<option data-belong="Dresden" >Pieschen Nord/Trachenberge</option>
+											<option data-belong="Dresden" >Mickten</option>
+											<option data-belong="Dresden" >Naußlitz</option>
+											<option data-belong="Dresden" >Striesen Ost</option>
+											<option data-belong="Dresden" >Gorbitz Süd</option>
+											<option data-belong="Dresden" >Tolkewitz/Seidnitz Nord</option>
+											<option data-belong="Dresden" >Innere Neustadt</option>
+											<option data-belong="Dresden" >Johannstadt Süd</option>
+											<option data-belong="Dresden" >Pieschen Süd</option>
+											<option data-belong="Dresden" >Leubnitz Neuostra</option>
+											<option data-belong="Dresden" >Radeberger Vorstadt</option>
+											<option data-belong="Dresden" >Bühlau/Weißer Hirsch</option>
+											<option data-belong="Dresden" >Prohlis Süd</option>
+											<option data-belong="Dresden" >Seevorstadt Ost</option>
+											<option data-belong="Dresden" >Loschwitz/Wachwitz</option>
+											<option data-belong="Dresden" >Reick</option>
+											<option data-belong="Dresden" >Strehlen</option>
+											<option data-belong="Dresden" >Leuben</option>
+											<option data-belong="Dresden" >Striesen West</option>
+											<option data-belong="Dresden" >Blasewitz</option>
+											<option data-belong="Dresden" >Plauen</option>
+											<option data-belong="Dresden" >Briesnitz</option>
+											<option data-belong="Dresden" >Gruna</option>
+											<option data-belong="Duisburg" >Mittelmeiderich</option>
+											<option data-belong="Duisburg" >Hochemmerich</option>
+											<option data-belong="Duisburg" >Dellviertel</option>
+											<option data-belong="Duisburg" >Beeck</option>
+											<option data-belong="Duisburg" >Obermarxloh</option>
+											<option data-belong="Duisburg" >Alt Hamborn</option>
+											<option data-belong="Duisburg" >Marxloh</option>
+											<option data-belong="Duisburg" >Rheinhausen Mitte</option>
+											<option data-belong="Duisburg" >Wanheimerort</option>
+											<option data-belong="Duisburg" >Duissern</option>
+											<option data-belong="Duisburg" >Obermeiderich</option>
+											<option data-belong="Duisburg" >Neumühl</option>
+											<option data-belong="Duisburg" >Untermeiderich</option>
+											<option data-belong="Duisburg" >Hochheide</option>
+											<option data-belong="Düsseldorf" >Pempelfort</option>
+											<option data-belong="Düsseldorf" >Düsseltal</option>
+											<option data-belong="Düsseldorf" >Bilk</option>
+											<option data-belong="Düsseldorf" >Flingern Nord</option>
+											<option data-belong="Düsseldorf" >Friedrichstadt</option>
+											<option data-belong="Düsseldorf" >Oberbilk</option>
+											<option data-belong="Düsseldorf" >Unterbilk</option>
+											<option data-belong="Düsseldorf" >Stadtmitte</option>
+											<option data-belong="Düsseldorf" >Golzheim</option>
+											<option data-belong="Düsseldorf" >Derendorf</option>
+											<option data-belong="Eisenach" >Stadtmitte</option>
+											<option data-belong="Ennepe Ruhr Kreis" >Witten</option>
+											<option data-belong="Ennepe Ruhr Kreis" >Hattingen</option>
+											<option data-belong="Ennepe Ruhr Kreis" >Schwelm</option>
+											<option data-belong="Ennepe Ruhr Kreis" >Gevelsberg</option>
+											<option data-belong="Ennepe Ruhr Kreis" >Ennepetal</option>
+											<option data-belong="Ennepe Ruhr Kreis" >Wetter Ruhr</option>
+											<option data-belong="Erfurt" >Krämpfervorstadt</option>
+											<option data-belong="Erfurt" >Andreasvorstadt</option>
+											<option data-belong="Erlangen" >Bruck</option>
+											<option data-belong="Erzgebirgskreis" >Annaberg Buchholz</option>
+											<option data-belong="Erzgebirgskreis" >Aue</option>
+											<option data-belong="Essen" >Holsterhausen</option>
+											<option data-belong="Essen" >Frohnhausen</option>
+											<option data-belong="Essen" >Katernberg</option>
+											<option data-belong="Essen" >Rüttenscheid</option>
+											<option data-belong="Essen" >Kray</option>
+											<option data-belong="Essen" >Altenessen Süd</option>
+											<option data-belong="Essen" >Südostviertel</option>
+											<option data-belong="Essen" >Südviertel</option>
+											<option data-belong="Esslingen Kreis" >Esslingen am Neckar</option>
+											<option data-belong="Esslingen Kreis" >Filderstadt</option>
+											<option data-belong="Flensburg" >Mürwik</option>
+											<option data-belong="Frankfurt am Main" >Westend Süd</option>
+											<option data-belong="Frankfurt am Main" >Bockenheim</option>
+											<option data-belong="Frankfurt am Main" >Sachsenhausen Nord</option>
+											<option data-belong="Frankfurt am Main" >Gallusviertel</option>
+											<option data-belong="Frankfurt am Main" >Nordend West</option>
+											<option data-belong="Frankfurt am Main" >Sachsenhausen Süd</option>
+											<option data-belong="Frankfurt am Main" >Niederrad</option>
+											<option data-belong="Frankfurt am Main" >Ostend</option>
+											<option data-belong="Frankfurt am Main" >Nordend Ost</option>
+											<option data-belong="Frankfurt am Main" >Riedberg</option>
+											<option data-belong="Frankfurt am Main" >Bahnhofsviertel</option>
+											<option data-belong="Frankfurt am Main" >Rödelheim</option>
+											<option data-belong="Frankfurt am Main" >Westend Nord</option>
+											<option data-belong="Fürth" >Altstadt / Innenstadt</option>
+											<option data-belong="Gelsenkirchen" >Buer</option>
+											<option data-belong="Gelsenkirchen" >Schalke</option>
+											<option data-belong="Gelsenkirchen" >Hassel</option>
+											<option data-belong="Gelsenkirchen" >Bulmke Hüllen</option>
+											<option data-belong="Gelsenkirchen" >Ückendorf</option>
+											<option data-belong="Gelsenkirchen" >Erle</option>
+											<option data-belong="Gelsenkirchen" >Beckhausen</option>
+											<option data-belong="Gelsenkirchen" >Bismarck</option>
+											<option data-belong="Gelsenkirchen" >Rotthausen</option>
+											<option data-belong="Gera" >Stadtmitte</option>
+											<option data-belong="Gera" >Gera Ost</option>
+											<option data-belong="Gera" >Debschwitz</option>
+											<option data-belong="Gera" >Lusan Brüte</option>
+											<option data-belong="Gera" >Lusan Laune</option>
+											<option data-belong="Gießen Kreis" >Gießen</option>
+											<option data-belong="Goslar Kreis" >Goslar</option>
+											<option data-belong="Goslar Kreis" >Clausthal Zellerfeld</option>
+											<option data-belong="Goslar Kreis" >Bad Harzburg</option>
+											<option data-belong="Goslar Kreis" >Seesen</option>
+											<option data-belong="Gotha Kreis" >Gotha</option>
+											<option data-belong="Greifswald" >Schönwalde II</option>
+											<option data-belong="Greiz Kreis" >Greiz</option>
+											<option data-belong="Greiz Kreis" >Zeulenroda Triebes</option>
+											<option data-belong="Groß Gerau Kreis" >Rüsselsheim am Main</option>
+											<option data-belong="Groß Gerau Kreis" >Mörfelden Walldorf</option>
+											<option data-belong="Görlitz Kreis" >Zittau</option>
+											<option data-belong="Görlitz Kreis" >Löbau</option>
+											<option data-belong="Görlitz Kreis" >Weißwasser/Oberlausitz</option>
+											<option data-belong="Göttingen Kreis" >Göttingen</option>
+											<option data-belong="Hagen" >Mittelstadt</option>
+											<option data-belong="Hagen" >Haspe</option>
+											<option data-belong="Hagen" >Wehringhausen</option>
+											<option data-belong="Hagen" >Altenhagen</option>
+											<option data-belong="Hagen" >Hohenlimburg</option>
+											<option data-belong="Halle Saale" >Silberhöhe</option>
+											<option data-belong="Halle Saale" >Südliche Neustadt</option>
+											<option data-belong="Halle Saale" >Nördliche Neustadt</option>
+											<option data-belong="Halle Saale" >Nördliche Innenstadt</option>
+											<option data-belong="Halle Saale" >Westliche Neustadt</option>
+											<option data-belong="Halle Saale" >Lutherplatz/Thüringer Bahnhof</option>
+											<option data-belong="hamburg" >Rahlstedt</option>
+											<option data-belong="hamburg" >Winterhude</option>
+											<option data-belong="hamburg" >Bergedorf</option>
+											<option data-belong="hamburg" >Langenhorn</option>
+											<option data-belong="hamburg" >Harburg</option>
+											<option data-belong="Hannover" >List</option>
+											<option data-belong="Hannover" >Kirchrode</option>
+											<option data-belong="Hannover" >Groß Buchholz</option>
+											<option data-belong="Hannover Kreis" >Garbsen</option>
+											<option data-belong="Hannover Kreis" >Langenhagen</option>
+											<option data-belong="Hannover Kreis" >Barsinghausen</option>
+											<option data-belong="Harburg Kreis" >Winsen Luhe</option>
+											<option data-belong="Harburg Kreis" >Buchholz in der Nordheide</option>
+											<option data-belong="Harburg Kreis" >Seevetal</option>
+											<option data-belong="Harz Kreis" >Halberstadt</option>
+											<option data-belong="Harz Kreis" >Quedlinburg</option>
+											<option data-belong="Harz Kreis" >Wernigerode</option>
+											<option data-belong="Heidelberg" >Bahnstadt</option>
+											<option data-belong="Heidelberg" >Neuenheim</option>
+											<option data-belong="Heilbronn" >Heilbronner Kernstadt</option>
+											<option data-belong="Heilbronn Kreis" >Bad Rappenau</option>
+											<option data-belong="Heilbronn Kreis" >Neckarsulm</option>
+											<option data-belong="Helmstedt Kreis" >Schöningen</option>
+											<option data-belong="Helmstedt Kreis" >Helmstedt</option>
+											<option data-belong="Herzogtum Lauenburg Kreis" >Geesthacht</option>
+											<option data-belong="Herzogtum Lauenburg Kreis" >Schwarzenbek</option>
+											<option data-belong="Hildesheim Kreis" >Hildesheim</option>
+											<option data-belong="Hildesheim Kreis" >Alfeld Leine</option>
+											<option data-belong="Hochtaunuskreis" >Bad Homburg vor der Höhe</option>
+											<option data-belong="Hochtaunuskreis" >Oberursel Taunus</option>
+											<option data-belong="Hochtaunuskreis" >Königstein im Taunus</option>
+											<option data-belong="Hochtaunuskreis" >Friedrichsdorf</option>
+											<option data-belong="Ingolstadt" >Südwest</option>
+											<option data-belong="Ingolstadt" >Nordost</option>
+											<option data-belong="Ingolstadt" >Südost</option>
+											<option data-belong="Karlsruhe" >Durlach</option>
+											<option data-belong="Karlsruhe Kreis" >Bruchsal</option>
+											<option data-belong="Karlsruhe Kreis" >Ettlingen</option>
+											<option data-belong="Karlsruhe Kreis" >Bretten</option>
+											<option data-belong="Kassel" >Kirchditmold</option>
+											<option data-belong="Kassel" >Nord Holland</option>
+											<option data-belong="Kiel" >Gaarden Ost</option>
+											<option data-belong="Kiel" >Schreventeich</option>
+											<option data-belong="Kiel" >Südfriedhof</option>
+											<option data-belong="Koblenz" >Metternich</option>
+											<option data-belong="Krefeld" >Stadtmitte</option>
+											<option data-belong="Krefeld" >Cracau</option>
+											<option data-belong="Krefeld" >Bockum</option>
+											<option data-belong="Köln" >Altstadt & Neustadt Nord</option>
+											<option data-belong="Köln" >Altstadt & Neustadt Süd</option>
+											<option data-belong="Köln" >Mülheim</option>
+											<option data-belong="Leipzig" >Möckern</option>
+											<option data-belong="Leipzig" >Reudnitz Thonberg</option>
+											<option data-belong="Leipzig" >Altlindenau</option>
+											<option data-belong="Leipzig" >Gohlis Mitte</option>
+											<option data-belong="Leipzig" >Gohlis Süd</option>
+											<option data-belong="Leipzig" >Connewitz</option>
+											<option data-belong="Leipzig" >Schönefeld Abtnaundorf</option>
+											<option data-belong="Leipzig" >Stötteritz</option>
+											<option data-belong="Leipzig" >Lausen Grünau</option>
+											<option data-belong="Leipzig" >Zentrum West</option>
+											<option data-belong="Leipzig" >Volkmarsdorf</option>
+											<option data-belong="Leipzig" >Zentrum Ost</option>
+											<option data-belong="Leipzig" >Gohlis Nord</option>
+											<option data-belong="Leipzig" >Zentrum Südost</option>
+											<option data-belong="Leipzig" >Plagwitz</option>
+											<option data-belong="Leipzig Kreis" >Borna</option>
+											<option data-belong="Leipzig Kreis" >Wurzen</option>
+											<option data-belong="Leipzig Kreis" >Markkleeberg</option>
+											<option data-belong="Leipzig Kreis" >Markranstädt</option>
+											<option data-belong="Leipzig Kreis" >Böhlen</option>
+											<option data-belong="Leipzig Kreis" >Kitzscher</option>
+											<option data-belong="Leipzig Kreis" >Grimma</option>
+											<option data-belong="Ludwigsburg Kreis" >Ludwigsburg</option>
+											<option data-belong="Ludwigsburg Kreis" >Bietigheim Bissingen</option>
+											<option data-belong="Ludwigslust Kreis" >Boizenburg/Elbe</option>
+											<option data-belong="Ludwigslust Kreis" >Ludwigslust</option>
+											<option data-belong="Lörrach Kreis" >Lörrach</option>
+											<option data-belong="Lörrach Kreis" >Weil am Rhein</option>
+											<option data-belong="Lüneburg Kreis" >Lüneburg</option>
+											<option data-belong="Magdeburg" >Stadtfeld Ost</option>
+											<option data-belong="Magdeburg" >Sudenburg</option>
+											<option data-belong="Magdeburg" >Neue Neustadt</option>
+											<option data-belong="Magdeburg" >Leipziger Str.</option>
+											<option data-belong="Magdeburg" >Stadtfeld West</option>
+											<option data-belong="Magdeburg" >Neu Olvenstedt</option>
+											<option data-belong="Magdeburg" >Cracau</option>
+											<option data-belong="Magdeburg" >Fermersleben</option>
+											<option data-belong="Magdeburg" >Buckau</option>
+											<option data-belong="Main Kinzig Kreis" >Hanau</option>
+											<option data-belong="Main Kinzig Kreis" >Maintal</option>
+											<option data-belong="Main Kinzig Kreis" >Bad Orb</option>
+											<option data-belong="Main Kinzig Kreis" >Gelnhausen</option>
+											<option data-belong="Main Taunus Kreis" >Kelkheim Taunus</option>
+											<option data-belong="Main Taunus Kreis" >Eschborn</option>
+											<option data-belong="Main Taunus Kreis" >Bad Soden am Taunus</option>
+											<option data-belong="Main Taunus Kreis" >Hofheim am Taunus</option>
+											<option data-belong="Mainz" >Hartenberg/Münchfeld</option>
+											<option data-belong="Mainz" >Oberstadt</option>
+											<option data-belong="Mainz Bingen Kreis" >Bingen am Rhein</option>
+											<option data-belong="Mainz Bingen Kreis" >Ingelheim am Rhein</option>
+											<option data-belong="Mannheim" >Schwetzingerstadt / Oststadt</option>
+											<option data-belong="Mannheim" >Innenstadt / Jungbusch</option>
+											<option data-belong="Mannheim" >Neckarstadt Ost / Wohlgelegen</option>
+											<option data-belong="Mannheim" >Käfertal</option>
+											<option data-belong="Mannheim" >Neckarstadt West</option>
+											<option data-belong="Mansfeld Südharz Kreis" >Lutherstadt Eisleben</option>
+											<option data-belong="Mansfeld Südharz Kreis" >Sangerhausen</option>
+											<option data-belong="Mansfeld Südharz Kreis" >Hettstedt</option>
+											<option data-belong="Marburg Biedenkopf Kreis" >Marburg</option>
+											<option data-belong="Mayen Koblenz Kreis" >Mayen</option>
+											<option data-belong="Mayen Koblenz Kreis" >Bendorf</option>
+											<option data-belong="Mayen Koblenz Kreis" >Andernach</option>
+											<option data-belong="Mecklenburg Strelitz Kreis" >Neustrelitz</option>
+											<option data-belong="Meißen Kreis" >Riesa</option>
+											<option data-belong="Meißen Kreis" >Meißen</option>
+											<option data-belong="Meißen Kreis" >Radebeul</option>
+											<option data-belong="Meißen Kreis" >Coswig</option>
+											<option data-belong="Meißen Kreis" >Großenhain</option>
+											<option data-belong="Mettmann Kreis" >Velbert</option>
+											<option data-belong="Mettmann Kreis" >Ratingen</option>
+											<option data-belong="Mettmann Kreis" >Hilden</option>
+											<option data-belong="Mettmann Kreis" >Heiligenhaus</option>
+											<option data-belong="Mettmann Kreis" >Mettmann</option>
+											<option data-belong="Mettmann Kreis" >Erkrath</option>
+											<option data-belong="Mettmann Kreis" >Langenfeld Rheinland</option>
+											<option data-belong="Mittelsachsen Kreis" >Döbeln</option>
+											<option data-belong="Mittelsachsen Kreis" >Mittweida</option>
+											<option data-belong="Mittelsachsen Kreis" >Frankenberg/Sachsen</option>
+											<option data-belong="Mittelsachsen Kreis" >Hainichen</option>
+											<option data-belong="Märkischer Kreis" >Iserlohn</option>
+											<option data-belong="Märkischer Kreis" >Lüdenscheid</option>
+											<option data-belong="Märkischer Kreis" >Werdohl</option>
+											<option data-belong="Märkischer Kreis" >Altena</option>
+											<option data-belong="Mönchengladbach" >Gladbach</option>
+											<option data-belong="Mönchengladbach" >Rheydt</option>
+											<option data-belong="München" >Bogenhausen</option>
+											<option data-belong="München" >Ludwigsvorstadt Isarvorstadt</option>
+											<option data-belong="München" >Schwabing</option>
+											<option data-belong="München" >Schwabing West</option>
+											<option data-belong="München" >Neuhausen</option>
+											<option data-belong="München" >Maxvorstadt</option>
+											<option data-belong="München" >Perlach</option>
+											<option data-belong="München" >Haidhausen</option>
+											<option data-belong="München" >Trudering</option>
+											<option data-belong="München" >Solln</option>
+											<option data-belong="München" >Obermenzing</option>
+											<option data-belong="München" >Obersendling</option>
+											<option data-belong="München" >Milbertshofen</option>
+											<option data-belong="München" >Obergiesing</option>
+											<option data-belong="München" >Aubing</option>
+											<option data-belong="München" >Pasing</option>
+											<option data-belong="München Kreis" >Ottobrunn</option>
+											<option data-belong="München Kreis" >Unterhaching</option>
+											<option data-belong="München Kreis" >Haar</option>
+											<option data-belong="Neubrandenburg" >Stadtgebiet Ost</option>
+											<option data-belong="Neubrandenburg" >Datzeviertel</option>
+											<option data-belong="Neubrandenburg" >Stadtgebiet Süd</option>
+											<option data-belong="Neunkirchen Kreis" >Neunkirchen</option>
+											<option data-belong="Nordhausen Kreis" >Nordhausen</option>
+											<option data-belong="Nordsachsen Kreis" >Delitzsch</option>
+											<option data-belong="Nordsachsen Kreis" >Eilenburg</option>
+											<option data-belong="Nordsachsen Kreis" >Schkeuditz</option>
+											<option data-belong="Nordsachsen Kreis" >Oschatz</option>
+											<option data-belong="Nordvorpommern Kreis" >Ribnitz Damgarten</option>
+											<option data-belong="Nordvorpommern Kreis" >Barth</option>
+											<option data-belong="Nordwestmecklenburg Kreis" >Grevesmühlen</option>
+											<option data-belong="Northeim Kreis" >Northeim</option>
+											<option data-belong="Northeim Kreis" >Einbeck</option>
+											<option data-belong="Northeim Kreis" >Bad Gandersheim</option>
+											<option data-belong="Nürnberg" >Galgenhof</option>
+											<option data-belong="Nürnberg" >Altstadt, St. Sebald</option>
+											<option data-belong="Nürnberg" >Wöhrd</option>
+											<option data-belong="Nürnberg" >Schoppershof</option>
+											<option data-belong="Nürnberg" >Glockenhof</option>
+											<option data-belong="Nürnberg" >Katzwang, Reichelsdorf Ost, Reichelsdorfer Keller</option>
+											<option data-belong="Oberspreewald Lausitz Kreis" >Senftenberg</option>
+											<option data-belong="Oberspreewald Lausitz Kreis" >Lauchhammer</option>
+											<option data-belong="Oberspreewald Lausitz Kreis" >Calau</option>
+											<option data-belong="Offenbach Kreis" >Dreieich</option>
+											<option data-belong="Offenbach Kreis" >Neu Isenburg</option>
+											<option data-belong="Offenbach Kreis" >Langen Hessen</option>
+											<option data-belong="Offenbach Kreis" >Rodgau</option>
+											<option data-belong="Offenbach am Main" >Stadtmitte</option>
+											<option data-belong="Offenbach am Main" >Kaiserlei</option>
+											<option data-belong="Oldenburg Oldenburg" >Bürgerfelde</option>
+											<option data-belong="Oldenburg Oldenburg" >Eversten</option>
+											<option data-belong="Osnabrück" >Westerberg</option>
+											<option data-belong="Osnabrück" >Dodesheide</option>
+											<option data-belong="Passau" >Haidenhof Nord</option>
+											<option data-belong="Passau" >Innstadt</option>
+											<option data-belong="Pinneberg Kreis" >Elmshorn</option>
+											<option data-belong="Pinneberg Kreis" >Wedel</option>
+											<option data-belong="Pinneberg Kreis" >Pinneberg</option>
+											<option data-belong="Plauen" >Bahnhofsvorstadt</option>
+											<option data-belong="Plauen" >Neundorfer Vorstadt</option>
+											<option data-belong="Plauen" >Haselbrunn</option>
+											<option data-belong="Plauen" >Reißiger Vorstadt</option>
+											<option data-belong="Plauen" >Chrieschwitz</option>
+											<option data-belong="Plauen" >Reusa mit Sorga</option>
+											<option data-belong="Plauen" >Siedlung Neundorf</option>
+											<option data-belong="Potsdam" >Nördliche Innenstadt</option>
+											<option data-belong="Potsdam" >Drewitz</option>
+											<option data-belong="Potsdam Mittelmark Kreis" >Werder Havel</option>
+											<option data-belong="Potsdam Mittelmark Kreis" >Teltow</option>
+											<option data-belong="Recklinghausen Kreis" >Recklinghausen</option>
+											<option data-belong="Recklinghausen Kreis" >Marl</option>
+											<option data-belong="Recklinghausen Kreis" >Gladbeck</option>
+											<option data-belong="Recklinghausen Kreis" >Castrop Rauxel</option>
+											<option data-belong="Recklinghausen Kreis" >Herten</option>
+											<option data-belong="Recklinghausen Kreis" >Dorsten</option>
+											<option data-belong="Recklinghausen Kreis" >Datteln</option>
+											<option data-belong="Recklinghausen Kreis" >Waltrop</option>
+											<option data-belong="Regensburg" >Westenviertel</option>
+											<option data-belong="Rendsburg Eckernförde Kreis" >Rendsburg</option>
+											<option data-belong="Rendsburg Eckernförde Kreis" >Eckernförde</option>
+											<option data-belong="Rhein Neckar Kreis" >Weinheim</option>
+											<option data-belong="Rhein Neckar Kreis" >Sinsheim</option>
+											<option data-belong="Rhein Neckar Kreis" >Schwetzingen</option>
+											<option data-belong="Rhein Neckar Kreis" >Wiesloch</option>
+											<option data-belong="Rheingau Taunus Kreis" >Idstein</option>
+											<option data-belong="Rheingau Taunus Kreis" >Taunusstein</option>
+											<option data-belong="Rosenheim Kreis" >Bad Aibling</option>
+											<option data-belong="Rosenheim Kreis" >Bernau am Chiemsee</option>
+											<option data-belong="Rosenheim Kreis" >Stephanskirchen</option>
+											<option data-belong="Rostock" >Stadtmitte</option>
+											<option data-belong="Rostock" >Kröpeliner Tor Vorstadt</option>
+											<option data-belong="Rostock" >Toitenwinkel</option>
+											<option data-belong="Saalekreis" >Merseburg</option>
+											<option data-belong="Saalekreis" >Bad Dürrenberg</option>
+											<option data-belong="Saalekreis" >Braunsbedra</option>
+											<option data-belong="Saarlouis Kreis" >Saarlouis</option>
+											<option data-belong="Saarpfalz Kreis" >Homburg</option>
+											<option data-belong="Salzgitter" >Lebenstedt</option>
+											<option data-belong="Salzgitter" >Bad</option>
+											<option data-belong="Salzlandkreis" >Schönebeck Elbe</option>
+											<option data-belong="Salzlandkreis" >Aschersleben</option>
+											<option data-belong="Schleswig Flensburg Kreis" >Schleswig</option>
+											<option data-belong="Schwerin" >Mueßer Holz</option>
+											<option data-belong="Schwerin" >Paulsstadt</option>
+											<option data-belong="Segeberg Kreis" >Norderstedt</option>
+											<option data-belong="Segeberg Kreis" >Kaltenkirchen</option>
+											<option data-belong="Stade Kreis" >Stade</option>
+											<option data-belong="Stade Kreis" >Buxtehude</option>
+											<option data-belong="Stadtverband Saarbrücken Kreis" >Saarbrücken</option>
+											<option data-belong="Stendal Kreis" >Stendal</option>
+											<option data-belong="Stormarn Kreis" >Ahrensburg</option>
+											<option data-belong="Stuttgart" >Ost</option>
+											<option data-belong="Stuttgart" >Bad Cannstatt</option>
+											<option data-belong="Sächsische Schweiz Osterzgebirge Kreis" >Freital</option>
+											<option data-belong="Sächsische Schweiz Osterzgebirge Kreis" >Pirna</option>
+											<option data-belong="Sächsische Schweiz Osterzgebirge Kreis" >Sebnitz</option>
+											<option data-belong="Trier" >Maximin</option>
+											<option data-belong="Trier" >Gartenfeld</option>
+											<option data-belong="Uckermark Kreis" >Prenzlau</option>
+											<option data-belong="Unstrut Hainich Kreis" >Mühlhausen/Thüringen</option>
+											<option data-belong="Unstrut Hainich Kreis" >Bad Langensalza</option>
+											<option data-belong="Westerwaldkreis" >Montabaur</option>
+											<option data-belong="Wetteraukreis" >Bad Nauheim</option>
+											<option data-belong="Wetteraukreis" >Bad Vilbel</option>
+											<option data-belong="Wetteraukreis" >Friedberg Hessen</option>
+											<option data-belong="Wiesbaden" >Nordost</option>
+											<option data-belong="Wiesbaden" >Südost</option>
+											<option data-belong="Wiesbaden" >Rheingauviertel, Hollerborn</option>
+											<option data-belong="Wiesbaden" >Biebrich</option>
+											<option data-belong="Wiesbaden" >Dotzheim</option>
+											<option data-belong="Wilhelmshaven" >Heppens</option>
+											<option data-belong="Wilhelmshaven" >Fedderwardergroden</option>
+											<option data-belong="Wuppertal" >Barmen</option>
+											<option data-belong="Wuppertal" >Elberfeld</option>
+											<option data-belong="Wuppertal" >Oberbarmen</option>
+											<option data-belong="Wuppertal" >Langerfeld Beyenburg</option>
+											<option data-belong="Wuppertal" >Heckinghausen</option>
+											<option data-belong="Wuppertal" >Elberfeld West</option>
+											<option data-belong="Wuppertal" >Uellendahl Katernberg</option>
+											<option data-belong="Wuppertal" >Vohwinkel</option>
+											<option data-belong="Wuppertal" >Ronsdorf</option>
+											<option data-belong="Würzburg" >Frauenland</option>
+											<option data-belong="Zwickau" >Mitte Nord</option>
+											<option data-belong="Zwickau" >Nordvorstadt</option>
+											<option data-belong="Zwickau" >Marienthal Ost</option>
+											<option data-belong="Zwickau" >Mitte West</option>
+											<option data-belong="Zwickau" >Pölbitz</option>
+											<option data-belong="Zwickau" >Neuplanitz</option>
+											<option data-belong="Zwickau" >Gebiet Reichenbacher Str./Freiheitssiedlung</option>
+											<option data-belong="Zwickau Kreis" >Werdau</option>
+											<option data-belong="Zwickau Kreis" >Limbach Oberfrohna</option>
+											<option data-belong="Zwickau Kreis" >Glauchau</option>
+											<option data-belong="Zwickau Kreis" >Crimmitschau</option>
+											<option data-belong="Zwickau Kreis" >Hohenstein Ernstthal</option>
+											<option data-belong="Zwickau Kreis" >Meerane</option>
+											<option data-belong="Zwickau Kreis" >Wilkau Haßlau</option>
+											<option data-belong="Zwickau Kreis" >Lichtenstein/Sachsen</option>	​
+										</select>
+								</div>
+		                    </div>
+		                </div>
+		                
+		                <div class="col-sm-6">
+		                    <div class="card">
+		                        <div class="card-body">
+		                            <h5 class="card-title">Balcony</h5>
+		                            <!-- Airline -->
+		                                    <select name="Balcony" id="Balcony" required="required">
+		                                        <option value="-1">Select</option>
+		                                        <option value="Yes">Yes</option>
+		                                        <option value="No">No</option>
+		                                    </select>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <br>
+		            <br>
+		            <br>
+            <!-- Submit -->
+                    <input type="submit" value="Submit" class="btn btn-secondary">
+                </form>
+              
+                <h3>{{ prediction_text }}</h3>
+            </div>
+        </div>
+    <section>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="static/stylesheet/selectFilter.min.js"></script>
+<script src="selectFilter.min.js"></script>
+</body>
+</html>
