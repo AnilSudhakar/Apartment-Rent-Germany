@@ -11,4 +11,4 @@ The data set contains most of the important properties, such as living area size
 # Aim
 The aim of this project is to build a web app which gives the apartment rent in Germany.
 
-![Alt text](static/stylesheet/css/home.jpg?raw=true "Title")
+![Web_app](https://user-images.githubusercontent.com/58003215/88217242-8c3cac00-cc5e-11ea-8b98-dc19f8bb4b82.png)
