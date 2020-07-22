@@ -25,3 +25,7 @@ The apartment rent predicted by ML model given by the app
 
 ![Web_app_3](https://user-images.githubusercontent.com/58003215/88217805-5d730580-cc5f-11ea-83b8-78c6a3313e11.png)
 
+# Outcome
+
+Though the data is scrapped in 2019 the predicted rents are close to the current rent.
+
