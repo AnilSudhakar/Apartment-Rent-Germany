@@ -18,16 +18,13 @@ The Home page of the app
 The UI design of the app
 
 
-![Web_app_2](https://user-images.githubusercontent.com/58003215/88217799-5ba94200-cc5f-11ea-8ff1-aa2fd84963a7.png)
-
-The apartment rent predicted by ML model given by the app
-
-
-![Web_app_3](https://user-images.githubusercontent.com/58003215/88217805-5d730580-cc5f-11ea-83b8-78c6a3313e11.png)
+![Apartment_app](https://user-images.githubusercontent.com/58003215/88285488-762afc00-ccef-11ea-8145-3289dab8664d.gif)
 
 # Outcome
 
 Though the data is scrapped in 2019 the predicted rents are close to the current rent.
+
+
 
 
 
