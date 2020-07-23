@@ -18,7 +18,7 @@ The Home page of the app
 The UI design of the app
 
 
-![Apartment_app](https://user-images.githubusercontent.com/58003215/88285488-762afc00-ccef-11ea-8145-3289dab8664d.gif)
+![Apartment_app](https://user-images.githubusercontent.com/58003215/88285488-762afc00-ccef-11ea-8145-3289dab8664d.gif | width=400)
 
 # Outcome
 
